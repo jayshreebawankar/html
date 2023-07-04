@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String | Methods </title>
+    <script >
+        var name = document.getElementById('name').innerHTML;
+        // document.write(name)
+        var error = document.getElementById('err');r
+        function nameBlurHandler(){
+            if(name.length < 3){
+                err.innerHTML = "Entered name should be greater than 3 character";
+            }else if(name.length > 15){
+                err.innerHTML = 'Entered name is too long' 
+            }else{
+                err.innerHTML = '';
+            }
+
+            if(name.charCodeAt < 65 && name.charCodeAt > 90){
+                err.innerHTML = "Your ".fontcolor('red').italics;
+            }else{
+                err.innerHTML = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid justify-content-center align-item-center">
+        <form class="col">
+            <input id="name" placeholder="Enter your name" class="from-input" onblur="nameBlurHandler()"> 
+            <p id="err"> </p>
+        </form>
+       
+       <!-- <button >Submit</button> -->
+    </div>
+</body>
+</html>

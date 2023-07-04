@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>International Phone Input | Task </title>
+    <script>
+        var country;
+        var phone;
+        var regexEx; 
+        var error;
+
+        function selectChangeHandler(){
+            country = document.getElementById('countryId').value;
+            var flag = document.getElementById('imgId');
+            phone = document.getElementById('phoneId');
+            error = document.getElementById('errorId');
+            error.innerText = '';
+
+            if(country == "UK"){
+                flag.src = './images/uk.svg';
+                phone.placeholder = '+44 XX XXXX XXXX';
+                regexEx = /\+44\s\d{2}\s\d{4}\s\d{4}/;
+            }else if(country == 'US'){
+                flag.src = './images/us.svg';
+                phone.placeholder = '+1(XXX) XXX-XXXX';
+                regexEx = /\+1\(\d{3}\)\s\d{3}-\d{4}/;
+
+            }else if(country == 'India'){
+                flag.src = './images/in.jpg';
+                phone.placeholder = '+91 XXXXXXXXXX';
+                regexEx = /\+91\s\d{10}/;
+
+            }else if(country == 'Afghanistan'){
+                flag.src = './images/af.jpg';
+                phone.placeholder = '+93 XX XXXXXXX';
+                regexEx = /\+93\s\d{2}\s\d{7}/;
+
+            }else if(country == 'Argentina'){
+                flag.src = './images/ar.jpg';
+                phone.placeholder = '+54 XXXX-XXXX';
+                regexEx = /\+54\s\d{4}-\d{4}/; 
+            }
+        }
+
+        function verifyClickHandler(){
+            if(phone.value.match(regexEx)){
+                alert('Verified');
+            }else{
+                alert('Invalid')
+            }
+            // if(country == 'India'){
+            //     if(document.getElementById('phoneId').value.match(/\+91\s\d{10}/)){
+            //         alert('Verified');
+            //     }
+            // }else if(phone.value.match(regexEx)){
+            //     alert('Verified');
+            // }else{
+            //     error.innerText = `${phone.placeholder}`;
+            // }
+        }
+
+        function phoneKeyUpHandler (){
+            if(phone.value.match(regexEx)){
+                error.innerText = `Please use this format : ${phone.placeholder}`;
+            }
+
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="h-100 d-flex align-items-center justify-content-center w-50">
+        <div class="form-control mt-5">
+            <h3 class="text-primary mx-auto">Verify Mobile Number </h3>
+                <dl >
+                <dt> Your Country : 
+                    <dd class="input-group">
+                        <img src="" class="input-group-text my-2" width="80" height="42" id="imgId" alt="N/A">
+                        <select class="form-select my-2" onchange="selectChangeHandler()" name="countryDrop" id="countryId" >
+                            <option>Select Country</option>
+                            <option>India</option>
+                            <option >UK</option>
+                            <option>US</option>
+                            <option>Afghanistan</option>
+                            <option>Argentina</option>
+                        </select>
+                    </dd>
+                </dt>
+                <dt>Your Phone No. :
+                    <dd> 
+                        <input onkeyup="phoneKeyUpHandler()" type="text" class='form-control my-2' id="phoneId">
+                        <dd class="text-danger ps-1" id="errorId"></dd>
+                    </dd>
+                </dt>
+                <button class="btn btn-primary w-100 mt-3" onclick="verifyClickHandler()">Verify</button>
+            </dl>
+        </div>
+    </div>
+    
+</body>
+</html>

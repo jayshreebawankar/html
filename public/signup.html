@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Signup | BookMyShow</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"/>
+    <script type="text/javascript" src="../src/userDetails.js"></script>
+  </head>
+  <body class="container-fluid">
+    <div id="signupDiv">
+      <h1>
+        To book your ticket, Register your self using below click : 
+      </h1>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#register">
+        Sign Up
+      </button>
+    </div>
+
+    <div class="modal" id="register">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3><span class="bi bi-person"></span>&nbsp; Registration Form</h3>
+            <button class="btn btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <label>Your Name: </label>
+            <input type="text" class="form-control" id="nameInput"/>
+            <label>Language: </label>
+              <select class="form-select" id="languageID">
+                <option>English</option>
+                <option>Marathi</option>
+                <option>Hindi</option>
+                <option>Tamil</option>
+                <option>Maliyalam</option>
+                <option>Urdu</option>
+                <option>Kannad</option>
+                <option>Gujarati</option>
+              </select>
+            <label>Nationnality </label>
+            <div class="form-switch row">
+              <label class="col-3">Indian : </label>
+              <input type="checkbox" class="form-check-input col-9" id="nationID"/>
+            </div>
+            <label>State </label>
+              <select class="form-select" id="stateId">
+                <option>Maharashtra</option>
+                <option>Rajasthan</option>
+                <option>Gujarat</option>
+                <option>Aasam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Goa</option>
+                <option>Arunachal Pradesh</option>
+                <option>Andhra Pradesh</option>
+              </select>
+            <label>DOB: </label>
+            <input type="date" class="form-control" id="dateId"/>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-success" data-bs-dismiss="modal" onclick="registerBtnHandler()">Register</button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <div style="display: none" id="profileDetails"> 
+      <h3><span class="bi bi-person"></span>&nbsp;Profile Details</h3>
+        <dl class="row">
+          <dt class="col-3">Name :</dt>
+          <dd class="col-9" id="userName"></dd>
+          <dt class="col-3">Language</dt>
+          <dd class="col-9" id="userLanguage"></dd>
+          <dt class="col-3">Nationality :</dt>
+          <dd class="col-9" id="useraNationality"></dd>
+          <dt class="col-3">State :</dt>
+          <dd class="col-9" id="userStateid"></dd>
+          <dt class="col-3">DOB :</dt>
+          <dd class="col-9" id="userDob"></dd>
+        </dl>
+
+        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#register">
+          <span class="bi bi-pen"> &nbsp;&nbsp;</span>Edit
+        </button>
+        <a href="../public/bookMyShow.html" class="btn btn-secondary" >&nbsp;Login </a>
+    </div> 
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"/>
+    <title>Book Movie | html</title>
+    <script src="../src/ticketHandler.js"></script>
+</head>
+<body class="container-fluid" style="background-color: black;">
+    <div class="navbar bg-red">
+        <h1 style="color:rgb(225, 4, 4)" class="text-center ms-4">Book Your Show </h1>
+        <div class="text-center me-4">
+            <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                Book Movie
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="bookingModal">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="color:red">Book Ticket</h2>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <select class="form-select" id="cityId">
+                                <option>Select City</option>
+                                <option>Nagpur</option>
+                                <option>Mumbai</option>
+                                <option>Pune </option>
+                                <option>Goa</option>
+                                <option>Ahmadabad</option>
+                                <option>Nashik</option>
+                                <option>Kolhapur</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="movieId" >
+                                <option>Select Movie</option>
+                                <option>Spider-Man</option>
+                                <option>The Little Mermaid</option>
+                                <option>Past Lives </option>
+                                <option>The Machine</option>
+                                <option> Fast X</option>
+                            </select>
+                        </div>                        
+                        <div>
+                            <select class="form-select" id="talkiesId">
+                                <option>Select Cinemas</option>
+                                <option>Cinepolish</option>
+                                <option>PVR</option>
+                                <option>Janki</option>
+                                <option>Cinemax</option>
+                                <option>Sangam</option>
+                                <option>Natraj</option>
+                                <option>Jayshree</option>
+                              </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="dateId">
+                              <option>Select Day</option>
+                              <option>Today</option>
+                              <option>Tommorrow</option>
+                              <option>Thursday</option>
+                              <option>Friday</option>
+                              <option>Saturday</option>
+                              <option>Sunday</option>
+                              <option>Moday</option>
+                            </select>
+                          </div>
+                          <div>
+                            <select class="form-select" id="timeId">
+                              <option>Select Timing</option>
+                              <option>04:00 AM</option>
+                              <option>08:00 AM</option>
+                              <option>11:00 AM</option>
+                              <option>02:00 PM</option>
+                              <option>06:00 PM</option>
+                              <option>09:00 PM</option>
+                            </select>
+                          </div>
+                          <div>
+                            <select class="form-select" id="seatId">
+                              <option>Select Seats</option>
+                              <option>A1</option>
+                              <option>A2</option>
+                              <option>A3</option>
+                              <option>A4</option>
+                              <option>B1</option>
+                              <option>B2</option>
+                              <option>B3</option>
+                              <option>B4</option>
+                            </select>
+                          </div>
+                          <button class="btn btn-danger" data-bs-dismiss ="modal" onclick="ticketHandler()">Book Ticket</button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    footer
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none;" id="ticketId">
+        <div class="card mx-auto " style="width: 20rem;">
+            <img class="card-img-top" src="../public/images/background-img.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h3 class="card-title" id="movieName"></h3>
+                <div class="d-flex justify-content-between">
+                <div>
+                    <button class="btn btn-danger" id="showTime"></button>
+                    <button class="btn btn-danger" id="showDay"></button>
+                </div>
+                </div>
+                <div class="d-flex justify-content py-3 font-weight-bold">
+                <p style="color:darkslategray" id="seatNo" ><p>&nbsp;•&nbsp;</p></p> 
+                <p style="color:darkslategray" id="cinema" ><p>&nbsp;•&nbsp;</p></p>    
+                <p style="color:darkslategray" id="city" ></p>
+                </div>
+                <p class="card-text">Kapil and Somya are a happily married couple from Indore who live in a joint family and decide to get a divorce one fine day.</p>
+                <a href="../public/bookMyShow.html" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#bookingModal" id="seatNo"> + Add Seats</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

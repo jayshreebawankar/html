@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../node_modules//bootstrap/dist/css/bootstrap.css">
+    <script type='text/javascript' src="../src/bmiCalculator.js"></script>
+    <title>BMI | Task</title>
+</head>
+<body>
+    <div class="card bg-warning text-white m-4">
+        <!-- <div class="d-flex flex-content-center " > -->
+        <div>
+            <nav class="navbar navbar-light " style="background-color: chocolate;"  >
+                <h1 class="text-danger mx-auto text-light" >Body Mass Index</h1>
+            </nav>
+        </div>
+        <div class="row m-4" > 
+            <div class="d-flex col-2 row">
+                <input type="radio" checked="true" name="genes" value='male' class="col-1 gender " required><h6 class="col-11 ">Male</h6>
+            </div>
+            <div class="d-fle col-10 row">
+                <input type="radio" name="genes" value="female" class="col-1 gender"><h6 class="col-11 ">Female</h6>
+            </div>
+        </div>
+        <div class="m-4 ps-3">
+            <h6>Age (1 year or above) *</h6>
+            <input type="text" id="age" class="w-40">
+        </div>
+        <div class="row m-4 ps-1">
+            <div class="col-3 ">
+                <h6 class="ps-1">Height *</h6>
+                <div class="row ps-3">
+                    <input class="col w-40" type="text" id="height">
+                    <h6 class="col">(feet)</h6>
+                </div>
+            </div>
+            <div class="col-9 ">
+                <h6>Weight *</h6>
+                <div class="row ps-2">
+                    <input class="col w-40"  type="text" id="weight">
+                    <h6 class="col">(pound)</h6>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center m-4 " >
+            <button type="button" onclick="calclickHandler()" class="btn btn-lg text-light" style="background-color: chocolate;">Calculate</button>
+        </div>
+        <div id="showBmi" style="display: none;">
+            <h3 class="text-secondary mx-5 my-3" >Your Body Mass Index is &nbsp;<span id="bmiresult" class="text-light" ></span></h3>
+        </div>
+
+        <!-- <div style="display: none;" id="showResult"> 
+            <nav class="navbar navbar-light" style="background-color: #e3f2fd;" >
+                <h3 class="text-secondary ">Your Body Mass Index is<span id="bmi" class="text-primary" ></span></h3>
+            </nav>
+        </div> -->
+    </div>
+</body>
+</html>

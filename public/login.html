@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <title>Login</title>
+    <script>
+        function modeChangeHandler(){
+            var mode = document.getElementById('switchMode');
+            var bg = document.getElementById('background');
+            
+
+            if(mode.checked){
+                bg.className = 'bg-dark text-light p-3'
+            }else{
+                bg.className = 'bg-info text-light p-3' 
+            }
+
+           
+        }
+        function loginClickHandler(){
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var err = document.getElementById('error');
+
+            // document.write('username', username, '<br/> Password : ',password)
+
+                if(username && password){
+                    err.innerHTML = '';
+                    alert('Login Successfully')
+                }else{
+                    err.innerHTML = 'required'.fontcolor('red');
+                }
+            }
+
+    </script>
+</head>
+<body class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center">
+        <form class="bg-info text-light p-3 " id="background">
+            <div>
+                <div class="form-switch d-flex row mx-1">
+                    <input type="checkbox" class="form-check-input " id="switchMode" onchange='modeChangeHandler()'>
+                    <h6 >Dark Mode</h6>
+                </div>
+                <div class="my-2">
+                    <h6 >Username : </h6>
+                    <input type="text" name="username" id="username">
+                    <p id="error"></p>
+                </div>
+                <div class="my-2">
+                    <h6 >Password : </h6>
+                    <input type="text" name="password" id="password" >
+                    <p id="error"></p>
+                </div>
+                <div class="mt-4">
+                    <button type="button" class="w-100 btn btn-primary" id="submit" onclick="loginClickHandler()" >Login</button>
+                </div>
+            </div>
+            
+        </form>
+
+    </div>
+    
+</body>
+</html>

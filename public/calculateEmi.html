@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <script type="text/javascript" src="../src/emiCalculator.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="my-2">
+            <h1 class="text-primary">Personal Loan EMI Calculator</h1>
+        </div>  
+        <div class="row mt-5">
+            <div class="col-4 d-flex">
+                <label >Amount you need &#8377 :&nbsp;</label>    
+                <input id="inputAmt" onchange="inputAmtHandler()"/>
+            </div>
+            <div class="col-4 d-flex">
+                <label >for </label><input type="text" class="mx-2" id="inputYear" onchange="inputYearHandler()"> <label>years</label>
+            </div>
+            <div class="col-4 d-flex">
+                <label >Interest rate :</label><input type="text" class="mx-2" id="inputInterest" onchange="inputIntHandler()"/> <label>%</label>  
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-4 d-flex " >
+                <label>&#8377 50,000</label>
+                    <input type='range' 
+                    class="form-range mx-2"   
+                    style="width:180px" 
+                    min="50000"
+                    max="4000000"
+                    value="50000"
+                    id="rangeAmt"
+                    onchange="amtChangeHandler()"
+                    />
+                <label>&#8377 40,00,000</label>
+            </div>
+            <div class="col-4 d-flex " >
+                <label> 1 Year</label>
+                    <input type='range' 
+                    class="form-range mx-2"   
+                    style="width:180px" 
+                    min="1"
+                    max="5"
+                    value="1"
+                    id="rangeYear"
+                    onchange="yearChangeHandler()"
+                    />
+                <label>5 Year</label>
+            </div>
+            <div class="col-4 d-flex" >
+                <label>10.5 %</label>
+                    <input type="range"
+                    class="form-range mx-2"
+                    style="width: 180px"
+                    min="10.5"
+                    max="21"
+                    value="10.5"
+                    step="0.01"
+                    id="rangeInterest"
+                    onchange="interestChangeHangeler()"
+                    />
+                <label>21 %</label>
+            </div>
+            <div class="text-center my-5 ">
+                <button class="btn btn-primary btn-lg px-4" onclick="calClickHandler()" >Calculate</button>
+            </div>
+            <div style="display: none;" id="showResult"> 
+                <nav class="navbar navbar-light" style="background-color: #e3f2fd;" >
+                    <h3 class="text-secondary ">Your monthly EMI will be &#8377<span id="result" class="text-primary"></span> per month Apply for a personal loan</h3>
+                </nav>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+
+

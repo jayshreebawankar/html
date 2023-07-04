@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substring | Task </title>
+    <script>
+        function emailBlurHandler(){
+            var email = document.getElementById('emailId').value;
+            var err = document.getElementById('error') 
+
+            var atTheRate = email.indexOf('@');
+            var dot = email.indexOf('.')
+
+            if(atTheRate != -1){
+                document.getElementById('username').innerText = email.substring(atTheRate, 0);
+                document.getElementById('domain').innerText = email.substring(atTheRate)
+                document.getElementById('extension').innerText = email.substring(dot)
+                err.innerHTML = '';
+            }else{
+                err.innerHTML = 'Invalid email'.fontcolor('red').bold();
+                email.value = ''
+            }
+        }
+    </script>
+</head>
+<body>
+    <div >
+        Your email : <input type="email" id="emailId" onblur="emailBlurHandler()">
+        <span id="error"></span>
+        <dl>
+            <dt>Your username : </dt>
+            <dd id="username"></dd>
+            <dt>Your domain : </dt>
+            <dd id="domain"></dd>
+            <dt>Domain extension : </dt>
+            <dd id="extension"></dd>
+        </dl>
+    </div>
+    
+</body>
+</html>
