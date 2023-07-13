@@ -1,0 +1,17 @@
+<script>
+    try{
+        var numNumerator = parseInt(prompt('Enter a numerator value : '));
+        var numDenominator = parseInt(prompt('Enter a numerator value : '));
+
+        var result = numNumerator/numDenominator;
+
+        if(numDenominator == 0){
+            throw'TRIES TO DIVIDE BY ZERO'
+        }
+        document.write('Total Division : ',result);
+    }catch(err){
+        console.log(`Inside catch...${err}`);
+    }finally{
+        console.log('Please enter denominator value greater than zero (0)');
+    }
+</script>

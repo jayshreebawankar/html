@@ -1,0 +1,31 @@
+<script>
+// write a program on Function with argument and no return:
+
+// Name: greetUser
+// Description: This function should take a user's name as an argument and display a personalized greeting message to the user
+
+
+function greetUser(username) {
+    let date = new Date();
+    let time = date.getHours();
+    switch (true) {
+        case (time >= 0 && time < 5) : 
+           document.write(`<h1>Good night ${username}, have a deep sleep...</h1>`); 
+            break; 
+        case (time >= 5 && time < 12) :
+            document.write(`<h1>Good moring ${username}, have a good day...</h1>`);
+            break;
+        case (time >= 12 && time < 18) :
+            document.write(`<h1>Good afternoon ${username}, have a great ahead...</h1>`);
+            break;
+        case (time >= 18 && time < 24):
+            document.write(`<h1>Good evening ${username}, have a blessed evening...</h1>`);
+            break;
+        default : document.write('<h1>Something went wrong....Please try againg...</h1>');
+            break;
+    }
+}
+
+let user = window.prompt('Please enter your name: ');
+greetUser(user);
+</script>

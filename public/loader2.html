@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script>
+      var count = 0;
+      function showStatus() {
+        count++;
+        if (count == 10) {
+          location.href = "loader.html";
+        } else {
+          document.getElementById("status").innerHTML = `${count}%`;
+          0
+        }
+      }
+      function loadClick() {
+        document.getElementById("loadBtn").style.display = "none";
+        document.getElementById("loaderId").style.display = "block";
+        setInterval(showStatus, 200);
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center" style="height: 400px">
+      <div>
+        <button class="btn btn-primary" onclick="loadClick()" id="loadBtn">Load Template</button>
+        <div class="text-center" id="loaderId" style="display: none">
+          <span class="spinner-border text-success"></span>
+          <p id="status"></p>
+          <div>Loading...</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

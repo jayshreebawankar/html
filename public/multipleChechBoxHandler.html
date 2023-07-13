@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Multiple Check Box</title>
+    <script>
+        function changeHandler(){
+            var listofCateory = '';
+            var cartegoryCheck = document.getElementsByName('category');
+            console.log(cartegoryCheck);
+            for(var checkbox of cartegoryCheck){
+                // console.log(checkbox.checked);
+
+                if(checkbox.checked){
+                    listofCateory += checkbox.value + "<br/";
+                }
+            document.querySelector('p').innerHTML =listofCateory;
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h3>Category</h3>
+    <div>
+        <ul style="list-style: none;">
+            <li><input onchange="changeHandler()" class="mx-2" type="checkbox" name="category" value="electronics" />Electronic</li>
+            <li><input onchange="changeHandler()" class="mx-2" type="checkbox" name="category" value="footwear" />Footwear</li>
+            <li><input onchange="changeHandler()" class="mx-2" type="checkbox" name="category" value="kids_fashion" />Kids Fashion</li>
+            <li><input onchange="changeHandler()" class="mx-2" type="checkbox" name="category" value="jewelary" />Jewelary</li>
+        </ul>
+    </div>
+    <button class="btn btn-success" onclick="submitHandler()">Submit</button>
+    <p></p>
+</body>
+</html>

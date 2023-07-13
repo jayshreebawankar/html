@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Card Payment</title>
+    <script>
+        var userDetails = {
+            card : '6007',
+            cvv : '210',
+            expDate : '2026'
+        }
+
+        function verifyCard(){
+            window.card = document.getElementById('card').value;
+
+            if(card == userDetails.card){
+                document.getElementById('cvvdiv').display = "block";
+                document.getElementById('cvv').disabled = false;
+                const setFocus = document.getElementById('cvv'); 
+                setFocus.focus();
+            }else{
+                alert('Card Number is INVALID')
+            }
+        }
+
+        function verifyCvv(){
+            window.cvv = document.getElementById('cvv').value;
+
+            if(cvv == userDetails.cvv){
+                document.getElementById('expDate').disabled = false;
+                const setFocus = document.getElementById('expDate'); 
+                setFocus.focus();
+            }else{
+                alert('CVV is INVALID')
+            }
+        }
+
+        function varifyExpDate(){
+            window.expDate = document.getElementById('expDate').value;
+
+            if(expDate == userDetails.expDate){
+                document.getElementById('paymentBtn').disabled = false;
+                const setFocus = document.getElementById('paymentBtn'); 
+                setFocus.focus();
+            }else{
+                alert('Expiry Date is INVALID')
+            }
+        }
+
+        function submitHandler(){
+            if(card == userDetails.card && cvv == userDetails.cvv && expDate == userDetails.expDate){
+                // setInterval(showDialog(),100)
+                alert('Payment Successful')
+            }else{
+                alert('Sever Interuppeted')
+            }
+        }
+    </script>
+</head>
+<body class="coontainer-fluid bg-dark" >
+    <fieldset>
+        <legend class="d-flex justify-content-center my-4 h2 text-success">Payment Details</legend>
+            <div class="d-flex mx-2 my-4">
+                <label class="form-label text-white col-3 fs-5" >Card Number:</label>
+                <input onchange="verifyCard()" type="text" class="form-control px-4 w-20 col-9" id="card"/>
+            </div>
+            <div class="d-flex mx-2 my-4" id="cvvdiv" display="none">
+                <label class="form-label text-white col-3 fs-5">CVV</label>
+                <input onchange="verifyCvv()" disabled type="text" class="form-control px-4 w-20 col-9" id="cvv"/>
+            </div>
+            <div class="d-flex mx-2 my-4">
+                <label class="form-label text-white col-3 fs-5">Expiry Date</label>
+                <input onchange="varifyExpDate()" disabled type="text" class="form-control px-4 w-20 col-9" id="expDate"/>
+            </div>
+            <div class="d-flex justify-content-center mx-2 my-4">
+                <button onclick="submitHandler()" disabled type="button" class="btn btn-success fs-5" style="width: 200px;" id="paymentBtn">Pay Now</button>
+            </div>
+            <div>
+                <div class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-body">
+                            <div class="modal-header">
+                                <span class="bi bi-check2 "></span>
+                            </div>
+                            <div class="modal-content">
+                                Payment Successful
+                            </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </fieldset>
+</body>
+</html>
