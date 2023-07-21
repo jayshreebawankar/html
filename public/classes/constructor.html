@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+    <script>
+        class Parent{
+            mother = 'Shashikala';
+            father = 'Ravindra';
+            Details(){
+                document.write(`${this.mother}<br/>${this.father}<br/>`)
+            }
+        }
+        class Daughter{
+                Elder = 'Jayshree';
+                Middle = 'Mayuri';
+                Younger = 'Rohini';
+            constructor(){
+                document.write('Mayuri seems relax now...')
+                // super.Details();
+                // document.write(`${this.Elder}<br/>${this.Middle}<br/>${this.Younger}<br/>`)
+            }
+        }
+
+        let onclickSubmit =()=>{
+            let obj = new Daughter;
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="onclickSubmit()">Submit</button>
+    </div>
+</body>
+</html>
