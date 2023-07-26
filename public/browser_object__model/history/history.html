@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write(`
+        history.length : ${history.length}<br/>
+        history.back : ${history.back}<br/>
+        history.forward : ${history.forward}<br/>
+        history.go(1) : ${history.go(1)}<br/>
+        history.go(-1) : ${history.go(-1)}<br/><br/><br/><br/>
+        `)
+
+        function backclick(){
+            history.back()
+        }
+    </script>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between;">
+        <a href="#html">html</a>
+        <a href="#css">css</a>
+        <a href="#js">js</a>
+        <a href="#react">react</a><br/><br/><br/><br/>
+    </div>
+    <button onclick="history.go(-1)">Back</button>
+    <button onclick="history.forward()">Forward</button>
+
+</body>
+</html>

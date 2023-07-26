@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <title>Event_Handling</title>
+    <script>
+      function onShowClick(...org) {
+        // console.log(id);
+        // console.log(name);
+        let [event, id, name, width, className] = org;
+        console.log("className : ", className);
+        console.log(width);
+        console.log("ctrlKey : ", event.ctrlKey);
+        console.log("event argument contains : ", org);
+      }
+    </script>
+  </head>
+  <body>
+    <button
+      onclick="onShowClick(event, this.id,this.name, this.width, this.className)"
+      name="showBtn"
+      value="show"
+      id="show"
+      width="1"
+      class="btn btn-danger"
+    >
+      Show
+    </button>
+  </body>
+</html>

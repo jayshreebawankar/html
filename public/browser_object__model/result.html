@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var details = [
+            { Title: 'getElementById', Description : 'Use to get access on element of html by using Id'},
+            { Title: 'getElementByClass', Description : 'Use to get access on element of html by using class'},
+            { Title: 'querySelector', Description : 'Use to get access on element of html by selector i.e.Selector either a class or id'}
+        ];
+        var bodyLoad =()=>{
+            console.log('index : ',location.search.indexOf("="));
+            var serachSerach = location.search.substring(location.search.indexOf("=") + 1);
+            console.log(serachSerach);
+            details.map((ele)=>{
+               if(serachSerach.toUpperCase() === ele.Title.toUpperCase()){
+                    var li = document.createElement('li')
+                    console.log(ele.Description);
+                    li.innerHTML = `${ele.Description}`;
+                    document.querySelector('ul').appendChild(li);
+               }
+            })
+        }
+
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <h3>Result</h3>
+    <ul></ul>
+</body>
+</html>

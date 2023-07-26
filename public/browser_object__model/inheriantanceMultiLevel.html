@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class employee  {
+            firstName = ''
+            lastName = ''
+            Designation = ''
+            getDetails(){
+                document.write(`${this.firstName} <br/> ${this.lastName} <br/> ${this.Designation}<br/>`)
+            }
+        }
+        class Developer extends employee{
+            firstName = 'Jayshree'
+            lastName = 'Bawankar'
+            Designation = 'developer'
+            getDetails(){
+                super.getDetails();
+            }
+        }
+        class HR extends employee{
+            firstName = 'Aishwarya'
+            lastName = 'Karjgawkar'
+            Designation = 'hr'
+            getDetails(){
+                super.getDetails();
+            }
+        }
+        class Designer extends employee{
+            firstName = 'Swapnil'
+            lastName = 'Thakare'
+            Designation = 'designer'
+            getDetails(){
+                super.getDetails();
+            }
+        }       
+        
+        const empChangeHandler =()=>{
+            let empValue = document.getElementById('emp_dropdown').value;
+            console.log(empValue);
+
+            let objArray = new Array(new Developer, new HR, new Designer);
+            console.log(objArray, "array of objArray");
+
+            objArray.map((emp)=>{
+                console.log(emp);
+                if(emp.Designation.toLowerCase() === empValue.toLowerCase()){
+                    document.write(`firstname : ${emp.firstName} <br/>lastname : ${emp.lastName} <br/> designation:  ${emp.Designation}<br/>`)
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <select onchange="empChangeHandler()" id="emp_dropdown">
+            <option >Choose employee</option>
+            <option value="developer">Web Developer</option>
+            <option value="hr">Human Resource Manager</option>
+            <option value="designer">Web Designer</option>
+        </select>
+    </form>
+</body>
+</html>

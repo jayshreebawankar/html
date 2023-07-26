@@ -1,0 +1,13 @@
+<script>
+    let pluginsArray = navigator.plugins;
+    console.log("pluginsArray : ",pluginsArray);
+    for(let plugins of pluginsArray){
+        document.write(`${plugins.name}<br/>`)
+    }
+
+    if(pluginsArray['PDF Viewer'] == undefined){
+        document.write(`PDF VIEWERED IS NOT INSTALLED`)
+    }else{
+        document.write('PDF VIEWER IS INSTALLED')
+    }
+</script>   

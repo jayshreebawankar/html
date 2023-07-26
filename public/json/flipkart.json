@@ -1,0 +1,13 @@
+{
+  "title": "vivo V27 5G (Magic Blue, 128 GB)  (8 GB RAM)",
+  "price": "32,999",
+  "rating": { "rate": 4.7, "ratings": 933, "review": 133 },
+  "offer": [
+    "Bank OfferFlat ₹1,250 Off on HDFC Bank Credit Card EMI Trxns on orders priced between ₹15,000 to ₹39,999T&C",
+    "Bank Offer10% off on Kotak Credit Card EMI Transactions, up to ₹1,000, on orders of ₹5,000 and aboveT&C",
+    "Bank Offer5% Cashback on Flipkart Axis Bank CardT&C",
+    "Special PriceGet extra ₹4000 off (price inclusive of cashback/coupon)T&C"
+  ],
+  "image": "../public/vivo.png",
+  "actualPrice": "45,000"
+}

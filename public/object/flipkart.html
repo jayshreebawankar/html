@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipkart</title>
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script>
+      function bodyLoad() {
+        fetch("../json/flipkart.json")
+          .then(function (responce) {
+            return responce.json();
+          })
+          .then(function (product) {
+            console.log(product);
+
+            document.getElementById("productImg").src = product.photo;
+            document.getElementById("productTitle").innerHTML = product.title;
+            document.getElementById("productRating").innerHTML =
+              product.ratings.rate;
+            document.getElementById("productReviews").innerHTML =
+              `${product.ratings.rating} Rating & ${product.ratings.review}Reviews`
+                .fontcolor("gray")
+                .bold();
+            document.getElementById(
+              "productPrice"
+            ).innerHTML = ` &#8377; ${product.price}
+          <font size="3" color="gray"><strike>&#8377; 45,999</strike></font>`;
+
+            for (var offer of product.offers) {
+              var li = document.createElement("li");
+              // li.style = list-style-type-none;
+              li.innerHTML = `<span class="bi bi-tag-fill text-success"></span>${offer}`;
+              document.querySelector("ul").appendChild(li);
+            }
+          });
+      }
+    </script>
+    <style>
+      input::placeholder {
+        font: small sans-serif;
+        padding: 15px;
+      }
+    </style>
+  </head>
+
+  <body onload="bodyLoad()" class="container-fluid">
+    <section class="row">
+      <div class="col-3">
+        <img id="productImg" width="300" height="400" alt="image" />
+      </div>
+      <div class="col-9">
+        <h3 id="productTitle"></h3>
+        <div class="d-flex">
+          <div class="bg-success text-white rounded p-1" style="width: 60px">
+            <span id="productRating"></span>
+            <span class="bi bi-star-fill"></span>
+          </div>
+          <div class="ms-3">
+            <div id="productReviews"></div>
+          </div>
+          <div></div>
+        </div>
+        <div class="mt-6">
+          <h3 id="productPrice"></h3>
+        </div>
+        <div>
+          <h3>Available offers</h3>
+          <ul style="list-style: none"></ul>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<script>
+    var values = [10, "Rajkumar", true];
+    values["3"] = "Rohini";
+    for (var property in values) {
+      document.write(
+        `[${property}]-${typeof property} : ${values[property]}-${typeof values[property]} <br>   `
+      );
+    }
+  </script>

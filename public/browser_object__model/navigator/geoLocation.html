@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation</title>
+    <script>
+        const bodyLoad =()=>{
+            navigator.geolocation.getCurrentPosition((position)=>{
+                console.log(position);
+                document.write(`
+                    latitude : ${position.coords.latitude}<br/>
+                    logitude : ${position.coords.longitude}
+                `)
+            })
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <div align="center">
+        <p></p>
+    </div>
+</body>
+</html>

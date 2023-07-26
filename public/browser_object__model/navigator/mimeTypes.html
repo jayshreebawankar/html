@@ -1,0 +1,12 @@
+<script>
+    // let data = navigator.mimeTypes
+    // let get = data.enablePlugins['PDF Viewer'];
+    // console.log(get);
+//  console.log("  data.enablePlugins : ",  data.enablePlugins['PDF Viewer']);
+    let mimeTypes = navigator.mimeTypes;
+    console.log('mimeTypes : ',mimeTypes);
+    
+    for (var types of navigator.mimeTypes){
+        document.write(`${types['PDF Viewer']}<br/>`)
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MouseOver Event</title>
+    <script>
+      function showMsg() {
+        document.querySelector(
+          "p"
+        ).innerHTML = `<h6>Symbol of Unity, Equality, Liberty</h6>`;
+      }
+      function hideMsg() {
+        document.querySelector("p").innerHTML = "My_Nation";
+      }
+    </script>
+  </head>
+  <body>
+    <img
+      src="../../images/in.jpg"
+      alt="india"
+      onmouseover="showMsg()"
+      onmouseout="hideMsg()"
+    />
+    <p></p>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<script>
+    console.log('location :      ', location);
+    switch(location.protocol){
+        case 'http:': 
+        document.write(`
+            protocol : ${location.protocol}<hr/>
+            hostname : ${location.hostname}<hr/>
+            pathname : ${location.pathname}<hr/>
+            port : ${location.port}<hr/>
+            hash : ${location.hash}<hr/>
+            url/href : ${location.href}<hr/>
+            
+        `)
+        break;
+        case 'file:':
+        document.write(`
+            protocol : ${location.protocol}
+            host : ${location.host}<hr/>
+            pathname : ${location.pathname}<hr/>
+            port : ${location.port}<hr/>
+            hostname : ${location.hostname}<hr/>
+            url/href : ${location.href}<hr/>
+        `)
+        break;
+        default : document.createElement('<h4>').innerHTML = 'Page not found'        
+    }
+</script>

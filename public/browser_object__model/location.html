@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <script>
+        const loginClick =()=>{
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('pswd').value;
+            if(username ==="jrbawankar" && password ==='Jayshree#1'){
+                location.href = '../../shopper.html'
+            }else{
+                location.href = '../../multipleChechBoxHandler.html'
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>User Login</h2>
+    <dl>
+        <dt>User Name :
+            <dd><input type="text" id="username"></dd>
+        </dt>
+        <dt>Password :
+            <dd><input type="password" id="pswd"></dd>
+        </dt>
+        <button onclick="loginClick()">Login</button>
+    </dl>
+</body>
+</html>

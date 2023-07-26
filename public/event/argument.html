@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <title>Document</title>
+    <script>
+      function detailClick(...details) {
+        // console.log(details[4].age);
+
+        let [wantToBe, num, working, name, personal] = details;
+        document.write(`
+            ${wantToBe}<br/>
+            ${num}<br/>
+            ${working}<br/>
+            ${name}<br/>
+            ${personal.age}<br/>
+            ${personal.profession}<br/>
+        `);
+      }
+    </script>
+  </head>
+  <body>
+    <button
+      onclick="detailClick(1, 50, true, 'Jayshree_World', {age: 23, profession : 'development'})"
+    >
+      Details
+    </button>
+  </body>
+</html>
